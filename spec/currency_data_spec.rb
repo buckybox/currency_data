@@ -1,3 +1,5 @@
+# encoding: UTF-8
+
 require "currency_data"
 
 describe CurrencyData do
