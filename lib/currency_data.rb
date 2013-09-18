@@ -8,8 +8,8 @@ module CurrencyData
 module_function
 
   def find iso_code
-    data = table[iso_code.downcase.to_sym]
-    OpenStruct.new(data)
+    data = table[iso_code.to_s.downcase.to_sym]
+    data && OpenStruct.new(data)
   end
 
   def table

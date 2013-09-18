@@ -5,6 +5,9 @@ require "currency_data"
 describe CurrencyData do
 
   describe ".find" do
+    specify { expect(CurrencyData.find(nil)).to be_nil }
+    specify { expect(CurrencyData.find("XXX")).to be_nil }
+
     context "with NZD" do
       before do
         @nzd = CurrencyData.find("NZD")
