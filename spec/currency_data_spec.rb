@@ -16,7 +16,7 @@ describe CurrencyData do
       specify { expect(@nzd.symbol).to eq("$") }
       specify { expect(@nzd.decimal_mark).to eq(".") }
       specify { expect(@nzd.thousands_separator).to eq(",") }
-      specify { expect(@nzd.symbol_first).to be_true }
+      specify { expect(@nzd.symbol_first).to be true }
     end
 
     context "with EUR" do
@@ -27,7 +27,7 @@ describe CurrencyData do
       specify { expect(@eur.symbol).to eq("€") }
       specify { expect(@eur.decimal_mark).to eq(",") }
       specify { expect(@eur.thousands_separator).to eq(".") }
-      specify { expect(@eur.symbol_first).to be_true }
+      specify { expect(@eur.symbol_first).to be true }
     end
   end
 end
