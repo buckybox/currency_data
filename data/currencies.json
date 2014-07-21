@@ -2230,11 +2230,13 @@
     "name": "Cfp Franc",
     "symbol": "Fr",
     "alternate_symbols": ["F"],
+    "prefered_symbol": "CFP",
     "subunit": "Centime",
     "subunit_to_unit": 100,
     "symbol_first": false,
     "html_entity": "",
     "decimal_mark": ".",
+    "decimal_places": 0,
     "thousands_separator": ",",
     "iso_numeric": "953"
   },

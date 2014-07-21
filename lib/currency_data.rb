@@ -9,13 +9,20 @@ module_function
 
   def find iso_code
     data = table[iso_code.to_s.downcase.to_sym]
-    data && OpenStruct.new(data)
+    data && OpenStruct.new(data).freeze
   end
 
   def table
     @table ||= begin
       json = File.read(CURRENCIES)
-      JSON.parse(json, symbolize_names: true)
+      hash = JSON.parse(json, symbolize_names: true)
+
+      hash.each do |code, attributes|
+        attributes[:prefered_symbol] ||= attributes[:symbol]
+        attributes[:decimal_places] ||= 2
+      end
+
+      hash.freeze
     end
   end
 end

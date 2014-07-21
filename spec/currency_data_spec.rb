@@ -17,6 +17,8 @@ describe CurrencyData do
       specify { expect(@nzd.decimal_mark).to eq(".") }
       specify { expect(@nzd.thousands_separator).to eq(",") }
       specify { expect(@nzd.symbol_first).to be true }
+      specify { expect(@nzd.prefered_symbol).to eq("$") }
+      specify { expect(@nzd.decimal_places).to eq(2) }
     end
 
     context "with EUR" do
@@ -28,6 +30,16 @@ describe CurrencyData do
       specify { expect(@eur.decimal_mark).to eq(",") }
       specify { expect(@eur.thousands_separator).to eq(".") }
       specify { expect(@eur.symbol_first).to be true }
+    end
+
+    context "with XPF" do
+      before do
+        @xpf = CurrencyData.find("XPF")
+      end
+
+      specify { expect(@xpf.symbol).to eq("Fr") }
+      specify { expect(@xpf.prefered_symbol).to eq("CFP") }
+      specify { expect(@xpf.decimal_places).to eq(0) }
     end
   end
 end
